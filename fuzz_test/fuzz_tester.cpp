@@ -1,9 +1,8 @@
+#include <fmt/format.h>
 #include <iterator>
 #include <utility>
-#include <fmt/format.h>
 
-[[nodiscard]] auto sum_values(const uint8_t *Data, size_t Size)
-{
+[[nodiscard]] auto sum_values(const uint8_t *Data, size_t Size) {
   constexpr auto scale = 1000;
 
   int value = 0;
@@ -14,8 +13,7 @@
 }
 
 // Fuzzer that attempts to invoke undefined behavior for signed integer overflow
-extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size)
-{
-  fmt::print("Value sum: {}, len{}\n", sum_values(Data,Size), Size);
+extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+  fmt::print("Value sum: {}, len{}\n", sum_values(Data, Size), Size);
   return 0;
 }

@@ -7,8 +7,8 @@ add_executable(tests tests.cpp)
 target_link_libraries(tests PRIVATE project_warnings project_options
                                     catch_main)
 
-include(Catch2)
-include(FindAndProcessCatchTests)
+include(Catch)
+include(ParseAndAddCatchTests)
 # automatically discover tests that are defined in catch based test files you
 # can modify the unittests. TEST_PREFIX to whatever you want, or use different
 # for different binaries
