@@ -37,6 +37,8 @@ function(set_project_warnings project_name)
       /w14906 # string literal cast to 'LPWSTR'
       /w14928 # illegal copy-initialization; more than one user-defined
               # conversion has been implicitly applied
+      /wd4275 # deisable warning:An exported class was derived from a class that
+              # wasn't exported.
   )
 
   set(CLANG_WARNINGS
